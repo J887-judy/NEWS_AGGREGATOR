@@ -179,4 +179,8 @@ news_aggregator/
 └── static/               # CSS/JS
     ├── style.css         # Estilos
     └── app.js            # JavaScript
-```
+
+```## 🎥 Demonstração do sistema
+
+Vídeo do funcionamento do projeto:
+https://drive.google.com/file/d/1ivjlt3TGVPJG_GrxGWngW-pnlAhX3aP-/view?usp=drive_link
