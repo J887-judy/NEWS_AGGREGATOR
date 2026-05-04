@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Agregador de Notícias</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="form-container">
+
+  <h2>🔐 Login</h2>
+
+  <form method="POST" action="/login">
+
+    <div class="form-group">
+      <label for="email">📧 Email</label>
+      <input type="email" id="email" name="email" required placeholder="seu@email.com">
+    </div>
+
+    <div class="form-group">
+      <label for="password">🔑 Senha</label>
+      <input type="password" id="password" name="password" required placeholder="Mínimo 6 caracteres">
+    </div>
+
+    <button type="submit" style="width: 100%; margin-top: 1rem;">Entrar</button>
+
+  </form>
+
+  <p style="text-align: center; margin-top: 1.5rem; color: var(--text-light);">
+    Não tens conta? <a href="/register" style="color: var(--primary); font-weight: 600; text-decoration: none;">Regista-te aqui</a>
+  </p>
+
+</div>
+
+</body>
+</html>

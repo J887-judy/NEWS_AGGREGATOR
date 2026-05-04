@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Ajuda - Agregador de Notícias</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="/home">📰 Home</a>
+    <a href="/personalizacao">⚙️ Preferências</a>
+    <a href="/favoritos">❤️ Favoritos</a>
+    <a href="/estatisticas">📊 Estatísticas</a>
+  </div>
+  <div class="nav-right">
+    <a href="/logout">🚪 Logout</a>
+  </div>
+</nav>
+
+<div class="page-container">
+  <h1>🆘 Central de Ajuda</h1>
+  <p>Encontre respostas para suas dúvidas sobre como usar o Agregador de Notícias</p>
+
+  <!-- Seção FAQ -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">❓ Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <h3>Como configurar minhas categorias de interesse?</h3>
+      <p>Acesse <a href="/personalizacao">Preferências</a> e selecione as categorias que você deseja acompanhar. Seus artigos na home serão personalizados com base nestas preferências.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Por que não vejo nenhuma notícia?</h3>
+      <p>Certifique-se de que:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>Você configurou pelo menos uma categoria em <a href="/personalizacao">Preferências</a></li>
+        <li>Sua API key está configurada corretamente no arquivo .env</li>
+        <li>Sua conexão de internet está ativa</li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h3>Como salvar artigos nos favoritos?</h3>
+      <p>Na página home, clique no botão "❤️ Salvar" em qualquer artigo. Você poderá acessar todos os seus favoritos na seção <a href="/favoritos">Favoritos</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Posso ver estatísticas do meu uso?</h3>
+      <p>Sim! Acesse <a href="/estatisticas">Estatísticas</a> para ver o total de favoritos, categorias que você segue e artigos mais populares.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Como logout da minha conta?</h3>
+      <p>Clique no botão "🚪 Logout" no canto superior direito da navegação. Sua sessão será encerrada de forma segura.</p>
+    </div>
+  </section>
+
+  <!-- Seção Guia de Uso -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">📚 Guia de Uso</h2>
+
+    <div class="guide-item">
+      <h3>🏠 Página Home</h3>
+      <p>A página inicial mostra artigos de notícias personalizados com base em suas preferências. Aqui você pode:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>Visualizar títulos e descrições de artigos</li>
+        <li>Ler resumos gerados por IA</li>
+        <li>Clicar em "Ler mais" para acessar o artigo completo</li>
+        <li>Salvar artigos nos favoritos</li>
+      </ul>
+    </div>
+
+    <div class="guide-item">
+      <h3>⚙️ Preferências</h3>
+      <p>Customize sua experiência selecionando as categorias que você deseja acompanhar. Categorias disponíveis:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>general - Notícias gerais</li>
+        <li>business - Negócios</li>
+        <li>tech - Tecnologia</li>
+        <li>sports - Esportes</li>
+        <li>health - Saúde</li>
+        <li>science - Ciência</li>
+        <li>entertainment - Entretenimento</li>
+      </ul>
+    </div>
+
+    <div class="guide-item">
+      <h3>❤️ Favoritos</h3>
+      <p>Todos os artigos que você salva aparecem aqui para referência posterior. Você pode:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>Ver todos os artigos que favoritou</li>
+        <li>Acessar rapidamente artigos de interesse</li>
+        <li>Consultar informações como fonte e data de publicação</li>
+      </ul>
+    </div>
+
+    <div class="guide-item">
+      <h3>📊 Estatísticas</h3>
+      <p>Acompanhe dados sobre seu uso da plataforma:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>Total de artigos salvos</li>
+        <li>Categorias que você segue</li>
+        <li>Artigos mais populares</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Seção Dicas -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">💡 Dicas Úteis</h2>
+
+    <div class="tip-item">
+      <strong>Resumos com IA:</strong> Os resumos dos artigos são gerados automaticamente por inteligência artificial para ajudar você a ter uma visão geral rápida.
+    </div>
+
+    <div class="tip-item">
+      <strong>Atualização em Tempo Real:</strong> Os artigos são atualizados regularmente com as notícias mais recentes das suas categorias.
+    </div>
+
+    <div class="tip-item">
+      <strong>Leitura Completa:</strong> Clique em "Ler mais" para acessar o artigo completo no site original.
+    </div>
+
+    <div class="tip-item">
+      <strong>Organize Seus Favoritos:</strong> Salve os artigos interessantes para consultá-los depois na seção Favoritos.
+    </div>
+
+    <div class="tip-item">
+      <strong>Acompanhe Seu Uso:</strong> Visite Estatísticas para ver como você está usando a plataforma.
+    </div>
+  </section>
+
+  <!-- Seção Troubleshooting -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">🔧 Solução de Problemas</h2>
+
+    <div class="problem-item">
+      <strong>❌ "Sem notícias disponíveis":</strong>
+      <p>
+        Isso geralmente ocorre quando:<br>
+        • Nenhuma categoria foi selecionada em Preferências<br>
+        • A API key não está configurada corretamente<br>
+        • Problema de conexão com a internet<br>
+        <br>
+        <strong>Solução:</strong> Vá para Preferências, selecione categorias e atualize a página (F5).
+      </p>
+    </div>
+
+    <div class="problem-item">
+      <strong>⏱️ Página carregando lentamente:</strong>
+      <p>
+        A primeira carregamento pode ser mais lentoo se o modelo de IA precisa ser carregado. Isso é normal.<br>
+        <strong>Solução:</strong> Aguarde alguns segundos ou tente recarregar a página.
+      </p>
+    </div>
+
+    <div class="problem-item">
+      <strong>🔐 Não consigo fazer login:</strong>
+      <p>
+        Verifique se:<br>
+        • Você inseriu o email correto<br>
+        • Sua senha está correta (diferenciam maiúsculas e minúsculas)<br>
+        • Sua conta está registrada<br>
+        <br>
+        Se continuar com problemas, crie uma nova conta em Registrar.
+      </p>
+    </div>
+
+    <div class="problem-item">
+      <strong>💾 Erro ao salvar favoritos:</strong>
+      <p>
+        Certifique-se de que o banco de dados está funcional.<br>
+        <strong>Solução:</strong> Recarregue a página e tente novamente.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section style="margin-bottom: 3rem;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">📞 Contacte-nos</h2>
+    <div class="alert alert-info">
+      <strong>Suporte:</strong> Se ainda tiver dúvidas ou encontrar problemas não resolvidos aqui, verifique os logs da aplicação ou consulte a documentação no GitHub.
+    </div>
+  </section>
+</div>
+
+<style>
+.faq-item, .guide-item, .tip-item, .problem-item {
+  background: var(--card);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.faq-item h3, .guide-item h3, .problem-item h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.faq-item p, .guide-item p, .tip-item, .problem-item p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.faq-item a, .guide-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.faq-item a:hover, .guide-item a:hover {
+  text-decoration: underline;
+}
+
+.tip-item {
+  background: linear-gradient(135deg, var(--primary-light), var(--bg));
+  border-left-color: var(--success);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+</style>
+
+</body>
+</html>

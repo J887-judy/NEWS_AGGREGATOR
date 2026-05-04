@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Erro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="error-container">
+  <h2>Erro</h2>
+  <p>{{ message }}</p>
+
+  <a href="/home">Voltar</a>
+  <a href="/logout">Logout</a>
+</div>
+
+</body>
+</html>

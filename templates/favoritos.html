@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos - Agregador de Notícias</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="/home">📰 Home</a>
+    <a href="/personalizacao">⚙️ Preferências</a>
+    <a href="/favoritos" class="active">❤️ Favoritos</a>
+    <a href="/estatisticas">📊 Estatísticas</a>
+  </div>
+  <div class="nav-right">
+    <a href="/ajuda">❓ Ajuda</a>
+    <a href="/logout">🚪 Logout</a>
+  </div>
+</nav>
+
+<h2>❤️ Meus Favoritos</h2>
+<p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+  Seus artigos salvos para leitura posterior
+</p>
+
+<div class="grid-container">
+  {% if favoritos %}
+    {% for f in favoritos %}
+      <div class="card">
+        <img src="{{ f[4] }}" alt="imagem" style="height: 180px; object-fit: cover;">
+        <div class="card-content">
+          <h3>{{ f[0] }}</h3>
+          <p><strong>{{ f[2] }}</strong></p>
+          <small class="source">{{ f[3] }}</small>
+          <div class="card-actions">
+            <a href="{{ f[1] }}" target="_blank" class="btn-link">🔗 Abrir Artigo</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty-state">
+      <h3>📚 Nenhum favorito ainda</h3>
+      <p>Comece a salvar artigos interessantes da <a href="/home">Home</a> para vê-los aqui!</p>
+    </div>
+  {% endif %}
+</div>
+
+<a href="/ajuda" class="help-badge" title="Central de Ajuda">❓</a>
+
+</body>
+</html>

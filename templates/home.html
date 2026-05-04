@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Agregador de Notícias</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="/home" class="active">📰 Home</a>
+    <a href="/personalizacao">⚙️ Preferências</a>
+    <a href="/favoritos">❤️ Favoritos</a>
+    <a href="/estatisticas">📊 Estatísticas</a>
+  </div>
+  <div class="nav-right">
+    <a href="/ajuda">❓ Ajuda</a>
+    <a href="/logout">🚪 Logout</a>
+  </div>
+</nav>
+
+<h2>Bem-vindo, <strong>{{ username }}</strong> 👋</h2>
+<p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">
+  Últimas notícias das suas categorias de interesse
+</p>
+
+{% if info_message %}
+  <div class="alert alert-info" style="max-width: 900px; margin: 0 auto 1.5rem; padding: 1rem 1.25rem;">
+    {{ info_message }}
+  </div>
+{% endif %}
+
+{% if error_messages %}
+  <div class="alert alert-danger" style="max-width: 900px; margin: 0 auto 1.5rem; padding: 1rem 1.25rem;">
+    <strong>Problema ao carregar notícias:</strong>
+    <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; list-style: disc; color: var(--text);">
+      {% for msg in error_messages %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+<div class="grid-container">
+
+  {% if noticias %}
+    {% for noticia in noticias %}
+      <div class="card">
+
+        <img src="{{ noticia.imagem }}" alt="imagem">
+
+        <div class="card-content">
+
+          <h3>{{ noticia.title }}</h3>
+          <p>{{ noticia.description }}</p>
+
+          <p><strong>Resumo:</strong> {{ noticia.resumo }}</p>
+
+          <small class="source">{{ noticia.author }} | {{ noticia.published }}</small>
+
+          <div class="card-actions">
+            <a href="{{ noticia.url }}" target="_blank" class="btn-link">Ler mais</a>
+
+            <form method="POST" action="/favoritos" class="form-inline">
+              <input type="hidden" name="titulo" value="{{ noticia.title }}">
+              <input type="hidden" name="url" value="{{ noticia.url }}">
+              <input type="hidden" name="fonte" value="{{ noticia.author }}">
+              <input type="hidden" name="data" value="{{ noticia.published }}">
+              <input type="hidden" name="imagem" value="{{ noticia.imagem }}">
+
+              <button type="submit" class="btn-save">❤️ Salvar</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty-state">
+      <h3>📰 Nenhuma notícia disponível</h3>
+      <p>Adicione categorias de interesse em <a href="/personalizacao">Preferências</a> para ver notícias personalizadas.</p>
+    </div>
+  {% endif %}
+
+</div>
+
+<a href="/ajuda" class="help-badge" title="Central de Ajuda">❓</a>
+
+</body>
+</html>
